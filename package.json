@@ -1,0 +1,20 @@
+{
+  "name": "typescript_restart_template",
+  "version": "1.0.0",
+  "description": "Node.js TypeScript Restart Project Template",
+  "main": "bin/index.js",
+  "scripts": {
+    "init": "npm g typescript -g & npm i",
+    "start": "node bin",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "express": "4.16.2"
+  },
+  "devDependencies": {
+    "@types/node": "8.0.28",
+    "@types/body-parser": "1.16.8",
+    "@types/express": "4.0.39"
+  }
+}
