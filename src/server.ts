@@ -9,6 +9,7 @@ export default class Server{
 		this.listenRestart();
 	}
 
+	// start server
 	private createServer(){
 		this.registerApi();
 
@@ -28,7 +29,12 @@ export default class Server{
 		})
 	}
 
+	// restart listener
 	private listenRestart(){
+		// when worker receive the message "exit",
+		// server.close first to stop receive new request.
+		// then last request is finish, process will be terminated.
+		// if process is terminated, worker will dispatch event "exit".
 		process.on( "message", ( $message ) => {
 			if( $message == "exit" ){
 				this.server.close( ()=>{
